@@ -1,14 +1,19 @@
 'use client'
 import React, { useState } from 'react';
 
-const Login: React.FC = () => {
+interface LoginProps {
+    onLoginSuccess: () => void;
+}
+
+const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
 
     const handleLogin = () => {
-        if (id === 'test' && password === 'password') {
+        if (id === 'test' && password === 'test') {
             setMessage('ログイン成功');
+            onLoginSuccess();
         } else {
             setMessage('IDまたはパスワードが間違っています');
         }
