@@ -9,10 +9,12 @@ import CurrentTime from "./components/CurrentTime";
 export default function Home() {
   const [showTextForm, setShowTextForm] = useState(false);
   const [showImageForm, setShowImageForm] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLoginSuccess = () => {
     setShowTextForm(true);
     setShowImageForm(true);
+    setIsLoggedIn(true);
   };
   return (
     <div className="bg-green-100 text-green-800 p-6">
@@ -26,7 +28,7 @@ export default function Home() {
         />
         <h1 className="text-green-900 text-center">Dummy Site</h1>
         <CurrentTime />
-        <Login onLoginSuccess={handleLoginSuccess} />
+        {!isLoggedIn && <Login onLoginSuccess={handleLoginSuccess} />}
         {showTextForm && <TextForm />}
         {showImageForm && <ImageForm />}
       </main>
