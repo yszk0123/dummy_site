@@ -14,7 +14,7 @@ const CurrentTime: React.FC = () => {
 
   return (
     <div id="current-time">
-      <p>現在時刻: {currentTime.toLocaleTimeString()}</p>
+      <div>{currentTime.toLocaleDateString()} {currentTime.toLocaleTimeString()}</div>
     </div>
   );
 };
