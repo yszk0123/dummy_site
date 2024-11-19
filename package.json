@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "predeploy": "next build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist —-nojekyll"
   },
   "dependencies": {
     "next": "15.0.3",
