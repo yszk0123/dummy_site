@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface LoginProps {
     onLoginSuccess: () => void;
@@ -10,8 +10,15 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
 
+    // クライアントサイドでのみ実行されるコードをラップ
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            // クライアントサイドでの処理
+        }
+    }, []);
+
     const handleLogin = () => {
-        if (id === 'test' && password === 'test') {
+        if (id === 'test' && password.startsWith('test')) {
             setMessage('ログイン成功');
             onLoginSuccess();
         } else {
