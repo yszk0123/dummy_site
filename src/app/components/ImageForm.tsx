@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const ImageForm: React.FC = () => {
     const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -18,7 +19,16 @@ const ImageForm: React.FC = () => {
     return (
         <div>
             <input type="file" accept="image/*" onChange={handleImageChange} className="button-default" />
-            {imagePreview && <img id="image-preview" src={imagePreview} alt="Preview" style={{ maxWidth: '200px' }} />}
+            {imagePreview && (
+                <Image
+                    id="image-preview"
+                    src={imagePreview}
+                    alt="Preview"
+                    width={200}
+                    height={200}
+                    style={{ maxWidth: '200px' }}
+                />
+            )}
         </div>
     );
 };
