@@ -12,3 +12,5 @@ yarn dev
 ```bash
 yarn deploy
 ```
+
+https://kaibadash.github.io/dummy_site/
