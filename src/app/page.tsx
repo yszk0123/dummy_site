@@ -15,15 +15,16 @@ export default function Home() {
     setShowImageForm(true);
   };
   return (
-    <div>
-      <main>
+    <div className="bg-green-100 text-green-800 p-6">
+      <main className="space-y-4">
         <Image 
           src="/satoutyouzu_bg_black.png" 
           alt="Logo" 
           width={100}
           height={100}
+          className="mx-auto"
         />
-        <h1>Dummy Site</h1>
+        <h1 className="text-green-900 text-center">Dummy Site</h1>
         <CurrentTime />
         <Login onLoginSuccess={handleLoginSuccess} />
         {showTextForm && <TextForm />}

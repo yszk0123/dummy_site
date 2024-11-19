@@ -33,6 +33,7 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
                 <label>ID: </label>
                 <input
                     type="text"
+                    className="input-default" 
                     value={id}
                     onChange={(e) => setId(e.target.value)}
                 />
@@ -41,11 +42,12 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
                 <label>パスワード: </label>
                 <input
                     type="password"
+                    className="input-default" 
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
             </div>
-            <button onClick={handleLogin}>ログイン</button>
+            <button onClick={handleLogin} className="button-default" >ログイン</button>
             {message && <p>{message}</p>}
         </div>
     );

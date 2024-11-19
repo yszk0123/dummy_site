@@ -13,7 +13,7 @@ const CurrentTime: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div id="current-time">
       <p>現在時刻: {currentTime.toLocaleTimeString()}</p>
     </div>
   );

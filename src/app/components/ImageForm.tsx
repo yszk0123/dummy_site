@@ -19,8 +19,8 @@ const ImageForm: React.FC = () => {
 
     return (
         <div>
-            <input type="file" accept="image/*" onChange={handleImageChange} />
-            {imagePreview && <img src={imagePreview} alt="Preview" style={{ maxWidth: '100%' }} />}
+            <input type="file" accept="image/*" onChange={handleImageChange} className="button-default" />
+            {imagePreview && <img id="image-preview" src={imagePreview} alt="Preview" style={{ maxWidth: '200px' }} />}
         </div>
     );
 };

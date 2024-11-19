@@ -20,12 +20,13 @@ const TextForm: React.FC = () => {
         <form onSubmit={handleSubmit}>
             <input
                 type="text"
+                className="input-default" 
                 value={text}
                 onChange={handleChange}
                 placeholder="テキストを入力してください"
             />
-            <button type="submit">送信</button>
-            <div>入力されたテキスト: {submittedText}</div>
+            <button type="submit" className="button-default" >送信</button>
+            <div id="submitted-text">{submittedText}</div>
         </form>
     );
 };
